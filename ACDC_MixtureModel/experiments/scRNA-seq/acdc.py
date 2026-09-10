@@ -96,7 +96,10 @@ def plot_loss_against_rho(kls, pis, maxK, lam, fig_name, log=True,legend=True,rh
     
 sys_id = int(os.getenv('SGE_TASK_ID'))
 # config file
-with open('/projectnb/mutsigs/menglai/RNAseq/code/configs/config.yml', 'r') as file:
+config_path = os.environ.get('ACDC_CONFIG',
+                             os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                          'configs', 'config.yml'))
+with open(config_path, 'r') as file:
     config = yaml.safe_load(file)
 
 samp_info = config['subsampling']

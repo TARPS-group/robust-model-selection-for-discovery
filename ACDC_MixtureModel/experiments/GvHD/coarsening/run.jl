@@ -27,7 +27,7 @@ using JSON
 
 
 # set current path
-cd("/Users/jwli/Documents/Bitbucket/structurally-aware-inference/code/experiments/FlowCytometry/")
+cd(@__DIR__)
 # Code for mixture model MCMC algorithm
 include("core.jl")
 # Code for helper functions

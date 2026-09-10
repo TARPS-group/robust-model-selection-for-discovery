@@ -3,7 +3,7 @@
 # Output: coarsening results to "/results"
 # ________________________________________________________________________________________________________
 # Before running include("run-comparison.jl"), change current directory to current path
-cd("/Users/jwli/Documents/GitHub/robust-mixture-model-selection/code/simulation/gaussian-mixture-model")
+cd(dirname(@__DIR__))
 
 ## loading packages and functions
 using Distributions
