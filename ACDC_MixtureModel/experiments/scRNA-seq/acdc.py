@@ -98,7 +98,7 @@ sys_id = int(os.getenv('SGE_TASK_ID'))
 # config file
 config_path = os.environ.get('ACDC_CONFIG',
                              os.path.join(os.path.dirname(os.path.abspath(__file__)),
-                                          'configs', 'config.yml'))
+                                          'config.yml'))
 with open(config_path, 'r') as file:
     config = yaml.safe_load(file)
 

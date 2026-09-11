@@ -4,7 +4,7 @@ library(Matrix)
 library(data.table)
 sys_id <- as.numeric(Sys.getenv("SGE_TASK_ID"))
 
-config_path <- './code/configs/'
+config_path <- './'
 config <- yaml.load_file(paste0(config_path,"config.yml"))
 
 samp_info <- config$subsampling

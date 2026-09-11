@@ -38,7 +38,7 @@ get_cell_df <- function(num_cell, num_type, dat_df, anno_f) {
 ##################################
 ##          load info           ##
 ##################################
-config_path <- './code/configs/'
+config_path <- './'
 config <- yaml.load_file(paste0(config_path,"config.yml"))
 
 samp_info <- config$subsampling

@@ -1,0 +1,60 @@
+########################
+#       subsampling    #
+########################
+
+subsampling:
+  allsamp_file: /projectnb/mutsigs/menglai/RNAseq/data/raw_countdata_CATall.RData
+  anno_file: /projectnb/mutsigs/menglai/RNAseq/data/annotations_facs.csv
+  subsample_path: /projectnb/mutsigs/menglai/RNAseq/data/samples/
+  
+  # ntype--num cell type; cobs--num cell obs per cell type
+  is_fixed_ctype: False
+  is_fixed_cobs: True
+  
+  # factor for multiplication: 
+  # ctype: num_type(incre)*t where t=1:n, cobs: 250+ num_obs(incre)*t
+  num_type: 2
+  num_obs: 250
+  
+  #number of replication for each ctype-cobs pair
+  num_rep: 10
+  seed: 42
+  # num_cell_onetype: 500
+  # num_celltype: 5
+  
+# out from subsampling.R, input into seurat preprocess
+#subsample_file: samp_5type300.csv 
+
+########################
+#  preprocess & SEURAT #
+########################
+
+preprocess:
+  #qc exclude
+  min_cells: 2
+  min_genes: 200
+
+  #pca
+  p_thresh: 0.05
+  # num_rep_jackstraw: 100
+  max_dim_base: 50
+  max_dim_incre: 10
+
+  #out
+  pca_proj_path: /projectnb/mutsigs/menglai/RNAseq/data/pca/
+  label_path: /projectnb/mutsigs/menglai/RNAseq/outputs/labels/
+
+########################
+#   EM gmm get params  #
+########################
+
+
+########################
+#          SARM        #
+########################
+sarm:
+  # maxK= base + ntype, 1,...,(maxK-1) clusters evaluated
+  maxK_base: 6
+  fig_path: /projectnb/mutsigs/menglai/RNAseq/outputs/plots/
+
+
