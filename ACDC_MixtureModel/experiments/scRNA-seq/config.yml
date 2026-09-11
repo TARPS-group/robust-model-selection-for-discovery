@@ -1,11 +1,20 @@
+# Paths below are RELATIVE PLACEHOLDERS -- edit them to point at your own data
+# and output locations before running anything.
+#
+# Directory values are joined to file names by plain string concatenation, so
+# each one must end in "/".
+#
+# acdc.py resolves this file relative to itself (override with the ACDC_CONFIG
+# environment variable); subsampling.R, process_seurat.R and sc3.R read it from
+# the current working directory, so run those from this directory.
 ########################
 #       subsampling    #
 ########################
 
 subsampling:
-  allsamp_file: /projectnb/mutsigs/menglai/RNAseq/data/raw_countdata_CATall.RData
-  anno_file: /projectnb/mutsigs/menglai/RNAseq/data/annotations_facs.csv
-  subsample_path: /projectnb/mutsigs/menglai/RNAseq/data/samples/
+  allsamp_file: data/raw_countdata_CATall.RData
+  anno_file: data/annotations_facs.csv
+  subsample_path: data/samples/
   
   # ntype--num cell type; cobs--num cell obs per cell type
   is_fixed_ctype: False
@@ -41,8 +50,8 @@ preprocess:
   max_dim_incre: 10
 
   #out
-  pca_proj_path: /projectnb/mutsigs/menglai/RNAseq/data/pca/
-  label_path: /projectnb/mutsigs/menglai/RNAseq/outputs/labels/
+  pca_proj_path: data/pca/
+  label_path: outputs/labels/
 
 ########################
 #   EM gmm get params  #
@@ -55,6 +64,6 @@ preprocess:
 sarm:
   # maxK= base + ntype, 1,...,(maxK-1) clusters evaluated
   maxK_base: 6
-  fig_path: /projectnb/mutsigs/menglai/RNAseq/outputs/plots/
+  fig_path: outputs/plots/
 
 
